@@ -3,97 +3,222 @@
 \input{preambles/preamble.tex}
 \input{preambles/notation.tex}
 \author{Jonathan Roth}
-\title[Advanced DiD Mixtape Workshop]{Advanced DiD Mixtape Workshop \\ Introduction}
+\title[Pre-trends testing]{Testing and Sensitivity Analysis for Violations of Parallel Trends}
 
 \begin{document}
 
-\imageframe{figures/cover_violations.png}
+%\imageframe{figures/cover_violations.png}
+\maketitle	
 
-\begin{frame}{Violations of PT}
-  \addtocounter{framenumber}{-1}
+
+\begin{frame}{Outline}
 	\begin{wideitemize}
 		\item
-		Remember that in the canonical DiD model we had:
-		    
-		\begin{itemize}
+		What is the parallel trends assumption? 
+		
+		\item
+		Why might we be initally skeptical of the parallel trends assumption? 
+		
+		\item
+		How can we partially test the validity of parallel trends using pre-treatment info? 
+		
+		\item
+		Limitations of pre-trends tests
+		
+		\item
+		Alternative approaches when worried about violations of parallel trends
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}{What is parallel trends?}
+	\begin{wideitemize}
+		\item
+		The \textbf{parallel trends} assumption states that if the treatment hadn't occurred, average outcomes for the treatment and control groups would have evolved in parallel
+		
+		$$\underbrace{ E[Y_{i1}(0) - Y_{i0}(0) \mid D_i =1] }_{\text{Counterfactual change for treated group}}= \underbrace{ E[Y_{i1}(0) - Y_{i0}(0) \mid D_i =0] }_{\text{Change for untreated group}} $$ 
+		
+		\pause
+		\item
+		The parallel trends assumption can also be viewed as a \textbf{selection bias stability} assumption:  
+		$$\underbrace{ E[Y_{i1}(0)  \mid D_i =1] - E[Y_{i1}(0) \mid D_i=0] }_{\text{Selection bias in period 1}}= \underbrace{ E[Y_{i0}(0)  \mid D_i =1] - E[Y_{i0}(0) \mid D_i=0] }_{\text{Selection bias in period 0}} $$ 
+		
+		\pause
+		\item
+		PT allows for there to be selection bias!\\
+		However, the selection bias has to be the same in both periods
+		
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}{Why might we be skeptical of PT?}
+	\begin{wideitemize}
+		\item
+		Recall PT requires the selection bias to be constant over time.\\
+		Why might we be skeptical of this? 
+		
+		\pause
+		\item
+		There might be different confounding factors in period 1 as in period 0 
+			\begin{itemize}
+				\item
+				E.g. states that pass a minimum wage increase might also change unemployment insurance at the same time
+				
+				\item
+				Then UI is a confound in period 1 but not in period 0
+			\end{itemize}
+		
+		\pause
+		\item
+		The same confounding factors may have different effects on the outcome in different time periods
+			\begin{itemize}
+				\item
+				Suppose people who enroll in a job training program are more motivated to find a job
+				
+				\item
+				Motivation might matter more in a bad economy than in a good economy
+			\end{itemize}
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}{Why might we be skeptical of PT? Part 2}
+	\begin{wideitemize}
+		\item
+		Another reason to be skeptical of parallel trends is that its validity will often be \textbf{functional form} dependent
+		
+		\item
+		Consider an example: 
+		\begin{wideitemize}
 			\item 
-			      Two periods and a common treatment date
-			              
+			In period 0, all control units have outcome 10;  all treated units have outcome 5.
+			
 			\item
-			      Identification from parallel trends and no anticipation
-			              
+			In period 1, all control units have outcome 15.
+			
 			\item
-			      A large number of clusters for inference
-		\end{itemize}
-		    
-		\item
-		A second literature has focused on relaxing the second assumption: \textbf{what if parallel trends may be violated?}
-		    
-		\item
-		The ideas from this literature apply even if there is non-staggered timing, although as we'll see, many of the tools can be applied with staggered timing as well. Large clusters is maintained throughout. 
-		    
+			If treatment hadn't occurred, would treated units' outcome have increased by 5 also (PT in levels)? 
+			
+			\item
+			Or would they have increased by 50\% ($\sim$ PT in logs)?
+			
+		\end{wideitemize} 
+
 	\end{wideitemize}
+\end{frame}
+
+\begin{frame}{}
+	
+	\citet{roth_when_2023} show that PT will depend on functional form unless: \medskip 
+	\begin{wideitemize}
+		\item
+		\textbf{Randomization:} treated and control group have same dist. of $Y(0)$ in each period
+		
+		\item
+		\textbf{No time effects:} distribution of $Y(0)$ doesn't change over time for either group
+		
+		\item
+		\textbf{A hybrid}: $\theta$ fraction of the population is as good as randomized; the other $1-\theta$ fraction has no time effects. 
+	\end{wideitemize}
+\bigskip 
+Absent these conditions, PT will be violated for at least some functional form; often hard to know if we chose the right one!
+\end{frame}
+
+
+\begin{frame}{Pre-trends to the rescue...}
+	\begin{wideitemize}
+		\item
+		Luckily, in most DiD applications we have several periods before anyone was treated
+		
+		\item
+		We can test whether the groups were moving in parallel prior to the treatment
+			\begin{wideitemize}
+				\item
+				If so, then assumption that confounding factors are stable seems more plausible
+				
+				\item
+				If not, then it's relatively implausible that would have magically started moving in parallel after treatment date
+			\end{wideitemize}
+		
+		\item
+		Testing for pre-trends provides a natural plausibility check on the parallel trends assumption
+	\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+	\begin{minipage}{.5\linewidth}
+			\includegraphics[width=0.99\linewidth]{Figures/Carey-event-study.png}
+	\end{minipage}%
+\begin{minipage}{0.5\linewidth}
+	\begin{wideitemize}
+	\item
+	Carey, Miller, and Wherry (2020) do a DiD comparing states who expanded Medicaid in 2014 to states that didn't. 
+	
+	\item
+	Report results from ``event-study'' regression: 
+	$$Y_{its} =  \phi_{t} + \lambda_s + \sum_{r\neq -1}  D_i \times 1[t = 2014 + r] \cdot  \beta_r   + \epsilon_{it} $$
+	
+	\noindent where $Y_{its}$ is insurance for person $i$ in year $t$ in state $s$, and $D_i = 1$ if in an expansion state.
+\end{wideitemize}
+\end{minipage}
+
+
+\end{frame}
+
+\begin{frame}
+	
+	\begin{wideitemize}
+		
+	\item
+	Testing for pre-existing trends is a very natural way to assess the plausibility of the PT assumption
+	
+	\item
+	But it also has several \textit{limitations}, highlighted in recent work \citep[][]{freyaldenhoven_pre-event_2019, kahn-lang_promise_2020, bilinski_seeking_2018, roth_pre-test_2021}
+	
+	\item
+	Remainder of the talk today will focus on these issues, as well as some solutions. 
+	
+	\item
+	Perhaps selfishly, will focus mainly on two of my papers
+	
+	\begin{wideitemize}
+		\item
+		Roth (2022 AER:I, ``Pre-test with Caution: Event-study Estimates After Testing for Parallel Trends") 
+		\item
+		Rambachan and Roth (Forthcoming RESTUD, ``A More Credible Approach to Parallel Trends'') 
+	\end{wideitemize}
+	
+	
+	\end{wideitemize}
+
 	
 \end{frame}
 
 
-
-
-\begin{frame}{Violations of parallel trends}
+\begin{frame}{Overview of Limitations}
 	\begin{wideitemize}
-		
-		
 		\item
-		Three substrands of this literature: \\
-		\medskip 
-		\begin{wideitemize}
-			
-			{\normalsize
+		Parallel pre-trends doesn't necessarily imply parallel (counterfactual) post-treatment trends
+			\begin{wideitemize}
 				\item
-				\textbf{Parallel trends only conditional on covariates} \\
+				If other policies change at the same time as the one of interest --- e.g. min wage and UI reform together --- can produce parallel pre-trends but non-parallel post-trends
 				
 				\item
-				\textbf{Testing for violations of (conditional) parallel trends}\\
-				
-				\item
-				\textbf{Sensitivity analysis and bounding exercises}
-			}
-			
-		\end{wideitemize}
+				Likewise, could be that treated/control groups are differentially exposed to recessions, but there is only a recession in the post-treatment period
+			\end{wideitemize}
 		
+		\pause
 		\item
-		I will focus on the latter two, (somewhat selfishly) focusing mainly on my own work
-		\begin{wideitemize}
-			\item
-			Roth (2022 AER:I, ``Pre-test with Caution: Event-study Estimates After Testing for Parallel Trends") 
-			\item
-			Rambachan and Roth (Forthcoming RESTUD, ``A More Credible Approach to Parallel Trends'') 
-		\end{wideitemize}
+		\textbf{Low power:} even if pre-trends are non-zero, we may fail to detect it statistically
 		
+		\pause
+		\item
+		\textbf{Pre-testing issues:} if we only analyze cases without statistically significant pre-trends, this introduces a form of selection bias (which can make things worse) 
 		
-		
+		\pause
+		\item
+		If we fail the pre-test, what next? May still want to write a paper (especially if violation is ``small'')
 	\end{wideitemize}
 \end{frame}
 
-
-\begin{frame}{Testing for pre-trends}
-	
-	\begin{wideitemize}
-		\item
-		In practice, we're often unsure \textit{ex ante} about the validity of the parallel trends assumption
-		    
-		\item
-		A nice feature of the DiD design is it has a built-in plausibility test:\\
-		Were the groups moving in parallel prior to the treatment? 
-		    
-		\item
-		Testing for pre-existing trends is a very natural way to assess the plausibility of the PT assumption
-		    
-		\item
-		But it also has several \textit{limitations}, highlighted in recent work \citep[][]{freyaldenhoven_pre-event_2019, kahn-lang_promise_2020, bilinski_seeking_2018, roth_pre-test_2021}
-	\end{wideitemize}
-	    
-\end{frame}
 
 
 \begin{frame}{Issue 1 - Low Power}
@@ -274,7 +399,7 @@
 
 \begin{frame}{To Summarize}
 	
-	\textbf{What are the Limitations of Pre-trends Testing?}
+	\textbf{What are the Statistical Limitations of Pre-trends Testing?}
 	\begin{enumerate}
 		\item
 		      Low Power -- May not find significant pre-trend even if PT is violated
@@ -390,6 +515,22 @@
 	\end{wideitemize}
 \end{frame}
 
+\begin{frame}{Robust confidence intervals}
+	\begin{wideitemize}
+		\item
+		In the paper, we develop confidence intervals for the treatment effect of interest under the assumptions on $\delta$ discussed above
+		
+		\item
+		The CIs account for the fact that we don't observe the true (population) pre-trend $\deltapre$, only our estimate $\betahatpre$. 
+		
+		\item
+		The robust CIs tend to be wider the larger are the confidence intervals on the pre-trends --- intuitive, since if we know less about the pre-trends, we should have more uncertainty
+		
+		\item
+		This contrasts with pre-trends tests, where you're less likely to reject the null that $\betapre =0$ when the SEs are larger!
+	\end{wideitemize}
+\end{frame}
+
 \begin{frame}{Event-study coefficients for log profits}
 	\centering
 	\includegraphics[width = 0.8 \textwidth]{figures/Benzarti-Carloni/profits-event-study.png}
@@ -402,7 +543,7 @@
 	
 	\begin{itemize}
 		\item
-		      ``Breakdown'' $\bar{M}$ for null effect is $\sim 2$
+		      ``Breakdown'' $\bar{M}$ for null effect using relative magnitudes bounds is $\sim 2$
 		          
 		\item
 		      Can rule out a null effect unless allow for violations of PT 2x larger than the max in pre-period
@@ -424,7 +565,7 @@
 		Roth (Forthcoming) and Rambachan and Roth (2022) provide tools for diagnostics and sensitivity analysis
 		    
 		\item
-		And these tools play nicely with recent estimators developed for heterogeneous treatment effects; see the bonus question in Exercise 2 for an example!
+		And these tools play nicely with recent estimators developed for heterogeneous treatment effects; see the bonus question in the coding exercise for an example!
 		    
 	\end{wideitemize}
 \end{frame}
@@ -480,14 +621,14 @@
 \begin{frame}{Additional Resources}
 	\begin{wideitemize}
 		\item
-		Roth (2021), ``Pre-test with Caution: Event-study Estimates After Testing for Parallel Trends''
+		Roth (2022 AER:I, ``Pre-test with Caution: Event-study Estimates After Testing for Parallel Trends''
 		\begin{itemize}
 			\item 
 			      \href{https://jonathandroth.github.io/assets/files/roth_pretrends_testing.pdf}{Paper}; \href{https://github.com/jonathandroth/pretrends}{\texttt{staggered} package} ; \href{https://github.com/jonathandroth/PretrendsPower\#pretrendspower}{Shiny app}
 		\end{itemize}
 		    
 		\item
-		Rambachan and Roth (2022), ``A More Credible Approach to Parallel Trends'''
+		Rambachan and Roth (2023 RESTUD), ``A More Credible Approach to Parallel Trends'''
 		\begin{itemize}
 			\item 
 			      \href{https://jonathandroth.github.io/assets/files/HonestParallelTrends_Main.pdf}{Paper}; \href{https://github.com/asheshrambachan/HonestDiD}{\texttt{HonestDiD} package} ; \href{https://github.com/asheshrambachan/HonestDiD/blob/master/doc/HonestDiD_Example.pdf}{Vignette}
@@ -551,6 +692,7 @@
 \end{frame}
 
 \begin{frame}[allowframebreaks,noframenumbering,plain]{References}
+	\nocite{rambachan_honest_2021}
 	\bibliography{Bibliography.bib}
 \end{frame}
 
