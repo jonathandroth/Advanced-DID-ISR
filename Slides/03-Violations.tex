@@ -30,6 +30,27 @@
 	\end{wideitemize}
 \end{frame}
 
+\begin{frame}{Set-up}
+For simplicity, consider the canonical two-period DiD model:
+\medskip
+\begin{wideitemize}
+	\item
+	There are two periods, $t=0,1$
+	
+	\item
+	We observe panel data with outcomes $Y_{it}$ for individual $i$ in period $t$
+	
+	\item
+	Units with $D_i=1$ are treated beginning period 1; units with $D_i=0$ are never treated
+	
+	\item
+	Potential outcomes: observed outcome is $Y_{it} = D_i Y_{it}(1) + (1-D_i) Y_{it}(0)$
+	
+	\item
+	Assume ``no anticipation'': $Y_{it}(0) = Y_{it}(1)$
+\end{wideitemize}
+\end{frame}
+
 \begin{frame}{What is parallel trends?}
 	\begin{wideitemize}
 		\item
@@ -49,6 +70,69 @@
 		
 	\end{wideitemize}
 \end{frame}
+
+\begin{frame}{Visualizing PT}
+	\begin{tikzpicture}[scale = 1.5]
+		% Draw x-axis
+		\draw[->] (0,0) -- (2.5,0) node[right] {Time};
+		\draw (0,-0.1) -- (0,0.1);
+		\draw (2,-0.1) -- (2,0.1);
+		\node[below] at (0,-0.1) {0};
+		\node[below] at (2,-0.1) {1};
+		
+		% Draw red dotted line
+		\draw[red,dotted] (0,2) -- (2,2.5) node[above] {$E[Y(0) | Treated]$};
+		
+		% Draw blue solid line
+		\draw[blue] (0,0.5) -- (2,1) node[midway,below=10pt] {$E[Y(0) | Control]$};
+		
+		% Add curly brace
+		\draw[decorate,decoration={brace,amplitude=10pt}] (-0.2,0.5) -- (-0.2,2) node[midway,left=12pt] {Selection bias in period 0};
+		
+		% Add curly brace
+		\draw[decorate,decoration={brace,amplitude=10pt,mirror}] (2.2,1) -- (2.2,2.5) node[midway,right=12pt] {Selection bias in period 1};
+		
+	\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{Why is PT Useful? It allows us to identify the ATT!}
+
+\medskip	
+
+\begin{minipage}{0.4\linewidth}
+			\begin{tikzpicture}[scale = 1.5]
+		% Draw x-axis
+		\draw[->] (0,0) -- (2.5,0) node[right] {Time};
+		\draw (0,-0.1) -- (0,0.1);
+		\draw (2,-0.1) -- (2,0.1);
+		\node[below] at (0,-0.1) {0};
+		\node[below] at (2,-0.1) {1};
+		
+		% Draw red dotted line
+		\draw[red,dotted] (0,2) -- (2,2.5);
+		
+		\node[below,red] at (1.5,2) {$E[Y(0) | Treated]$};
+		
+		% Draw red dotted line
+		\draw[red] (0,2) -- (2,3.5) node[above] {$E[Y | Treated]$};
+		
+		% Draw blue solid line
+		\draw[blue] (0,0.5) -- (2,1) node[midway,below=10pt] {$E[Y | Control]$};
+		
+		% Add curly brace
+		\draw[decorate,decoration={brace,amplitude=10pt,mirror}] (2.2,2.5) -- (2.2,3.5) node[midway,right=12pt] {ATT};			
+	\end{tikzpicture}			
+\end{minipage}%
+\begin{minipage}{0.6\linewidth}
+$$\underbrace{E[Y_{i1}(1)- Y_{i1}(0) | D_i =1]}_{ATT} = (\mu_{11} - \mu_{10}) - (\mu_{01} - \mu_{00})  $$
+\noindent for $\mu_{td} = E[Y_{it} | D_i = 1]$.
+\end{minipage}		
+	
+
+\end{frame}
+
+
 
 \begin{frame}{Why might we be skeptical of PT?}
 	\begin{wideitemize}
@@ -79,6 +163,7 @@
 			\end{itemize}
 	\end{wideitemize}
 \end{frame}
+
 
 \begin{frame}{Why might we be skeptical of PT? Part 2}
 	\begin{wideitemize}
@@ -562,7 +647,7 @@ Absent these conditions, PT will be violated for at least some functional form; 
 		In particular, they may suffer from low power and introduce pre-test bias
 		    
 		\item
-		Roth (Forthcoming) and Rambachan and Roth (2022) provide tools for diagnostics and sensitivity analysis
+		Roth (2022) and Rambachan and Roth (Forthcoming) provide tools for diagnostics and sensitivity analysis
 		    
 		\item
 		And these tools play nicely with recent estimators developed for heterogeneous treatment effects; see the bonus question in the coding exercise for an example!

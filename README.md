@@ -8,8 +8,8 @@ The exact timing will depend on how many questions people ask, but a rough outli
 
 
 All times Eastern Time.
-
-- 9-10:15 **Lecture 1: Testing the Parallel Trends Assumption: Issues and Limitations**
+- 9-9:15 **Introduction: Overview of Recent Advances in DiD**
+- 9:15-10:15 **Lecture 1: Testing the Parallel Trends Assumption: Issues and Limitations**
 - 10:15-10:30 **Break**
 - 10:30-11:45 **Lecture 2: New Approaches When Parallel Trends May Be Violated**
 - 11:45-12:15 **Coding Exercise**

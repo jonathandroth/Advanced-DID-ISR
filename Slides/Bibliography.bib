@@ -1,15 +1,137 @@
 @Preamble{ " \newcommand{\noop}[1]{} " }
 
 
-@article{roth_when_2023,
-	title = {When {Is} {Parallel} {Trends} {Sensitive} to {Functional} {Form}?},
-	journal = {Econometrica},
-	author = {Roth, Jonathan and Sant'Anna, Pedro H. C.},
-	year={2023},
-	volume = {91},
-	number = {2},
-	pages = {737--747}
+@article{rambachan_more_2023,
+	title = {A {More} {Credible} {Approach} to {Parallel} {Trends}},
+	issn = {0034-6527},
+	url = {https://doi.org/10.1093/restud/rdad018},
+	doi = {10.1093/restud/rdad018},
+	abstract = {This paper proposes tools for robust inference in difference-in-differences and event-study designs where the parallel trends assumption may be violated. Instead of requiring that parallel trends holds exactly, we impose restrictions on how different the post-treatment violations of parallel trends can be from the pre-treatment differences in trends (“pre-trends”). The causal parameter of interest is partially identified under these restrictions. We introduce two approaches that guarantee uniformly valid inference under the imposed restrictions, and we derive novel results showing that they have desirable power properties in our context. We illustrate how economic knowledge can inform the restrictions on the possible violations of parallel trends in two economic applications. We also highlight how our approach can be used to conduct sensitivity analyses showing what causal conclusions can be drawn under various restrictions on the possible violations of the parallel trends assumption.},
+	urldate = {2023-07-10},
+	journal = {The Review of Economic Studies},
+	author = {Rambachan, Ashesh and Roth, Jonathan},
+	month = feb,
+	year = {2023},
+	pages = {rdad018},
+	file = {Snapshot:/Users/jonathanroth/Zotero/storage/IV59B5S7/7039335.html:text/html},
 }
+
+
+
+
+@article{abadie_robust_2022,
+	title = {Robust {Post}-{Matching} {Inference}},
+	volume = {117},
+	issn = {0162-1459},
+	url = {https://doi.org/10.1080/01621459.2020.1840383},
+	doi = {10.1080/01621459.2020.1840383},
+	abstract = {Nearest-neighbor matching is a popular nonparametric tool to create balance between treatment and control groups in observational studies. As a preprocessing step before regression, matching reduces the dependence on parametric modeling assumptions. In current empirical practice, however, the matching step is often ignored in the calculation of standard errors and confidence intervals. In this article, we show that ignoring the matching step results in asymptotically valid standard errors if matching is done without replacement and the regression model is correctly specified relative to the population regression function of the outcome variable on the treatment variable and all the covariates used for matching. However, standard errors that ignore the matching step are not valid if matching is conducted with replacement or, more crucially, if the second step regression model is misspecified in the sense indicated above. Moreover, correct specification of the regression model is not required for consistent estimation of treatment effects with matched data. We show that two easily implementable alternatives produce approximations to the distribution of the post-matching estimator that are robust to misspecification. A simulation study and an empirical example demonstrate the empirical relevance of our results. Supplementary materials for this article are available online.},
+	number = {538},
+	urldate = {2022-12-26},
+	journal = {Journal of the American Statistical Association},
+	author = {Abadie, Alberto and Spiess, Jann},
+	month = apr,
+	year = {2022},
+	note = {Publisher: Taylor \& Francis
+\_eprint: https://doi.org/10.1080/01621459.2020.1840383},
+	keywords = {Matching, Robust estimation, Treatment effects},
+	pages = {983--995},
+	file = {Full Text PDF:/Users/jonathanroth/Zotero/storage/2XR4XSS8/Abadie and Spiess - 2022 - Robust Post-Matching Inference.pdf:application/pdf},
+}
+
+@misc{rambachan_design-based_2022,
+	title = {Design-{Based} {Uncertainty} for {Quasi}-{Experiments}},
+	url = {http://arxiv.org/abs/2008.00602},
+	doi = {10.48550/arXiv.2008.00602},
+	abstract = {This paper develops a design-based theory of uncertainty that is suitable for analyzing quasi-experimental settings, such as difference-in-differences (DiD). A key feature of our framework is that each unit has an idiosyncratic treatment probability that is unknown to the researcher and may be related to the potential outcomes. We derive formulas for the bias of common estimators (including DiD), and provide conditions under which they are unbiased for an intrepretable causal estimand (e.g., analogs to the ATE or ATT). We further show that when the finite population is large, conventional standard errors are valid but typically conservative estimates of the variance of the estimator over the randomization distribution. An interesting feature of our framework is that conventional standard errors tend to become more conservative when treatment probabilities vary across units. This conservativeness helps to (partially) mitigate the undercoverage of confidence intervals when the estimator is biased. Thus, for example, confidence intervals for the DiD estimator can have correct coverage for the average treatment effect on the treated even if the parallel trends assumption does not hold exactly. We show that these dynamics can be important in simulations calibrated to real labor-market data. Our results also have implications for the appropriate level to cluster standard errors, and for the analysis of linear covariate adjustment and instrumental variables.},
+	urldate = {2022-12-26},
+	publisher = {arXiv},
+	author = {Rambachan, Ashesh and Roth, Jonathan},
+	month = nov,
+	year = {2022},
+	note = {arXiv:2008.00602 [econ, stat]},
+	keywords = {Economics - Econometrics, Statistics - Methodology},
+	file = {arXiv Fulltext PDF:/Users/jonathanroth/Zotero/storage/Y47MTEI8/Rambachan and Roth - 2022 - Design-Based Uncertainty for Quasi-Experiments.pdf:application/pdf},
+}
+
+
+@misc{de_chaisemartin_difference--differences_2022,
+	title = {Difference-in-{Differences} {Estimators} of {Intertemporal} {Treatment} {Effects}},
+	url = {http://arxiv.org/abs/2007.04267},
+	doi = {10.48550/arXiv.2007.04267},
+	abstract = {We study treatment-effect estimation, with a panel where groups may experience multiple changes of their treatment dose. We make parallel trends assumptions, but do not restrict treatment effect heterogeneity, unlike the linear regressions that have been used in such designs. We extend the event-study approach for binary-and-staggered treatments, by redefining the event as the first time a group's treatment changes. This yields an event-study graph, with reduced-form estimates of the effect of having been exposed to a weakly higher amount of treatment for \${\textbackslash}ell\$ periods. We show that the reduced-form estimates can be combined into an economically interpretable cost-benefit ratio.},
+	urldate = {2022-12-26},
+	publisher = {arXiv},
+	author = {de Chaisemartin, Clément and D'Haultfoeuille, Xavier},
+	month = mar,
+	year = {2022},
+	note = {arXiv:2007.04267 [econ]},
+	keywords = {Economics - Econometrics},
+	annote = {Comment: Compared to v8, we added in particular Section 3 on usual regressions and an additional discussion on our parameters. 68 pages overall, with the web appendix starting at page 45},
+	file = {arXiv Fulltext PDF:/Users/jonathanroth/Zotero/storage/UYVXFDH2/de Chaisemartin and D'Haultfoeuille - 2022 - Difference-in-Differences Estimators of Intertempo.pdf:application/pdf},
+}
+
+
+@techreport{schmidheiny_event_2020,
+	address = {Rochester, NY},
+	type = {{SSRN} {Scholarly} {Paper}},
+	title = {On {Event} {Studies} and {Distributed}-{Lags} in {Two}-{Way} {Fixed} {Effects} {Models}: {Identification}, {Equivalence}, and {Generalization}},
+	shorttitle = {On {Event} {Studies} and {Distributed}-{Lags} in {Two}-{Way} {Fixed} {Effects} {Models}},
+	url = {https://papers.ssrn.com/abstract=3571164},
+	abstract = {We discuss important properties and pitfalls of panel-data event study designs. We derive three main results. First, binning of effect window endpoints is a practical necessity and key for identification of dynamic treatment effects. Second, event study designs with binned endpoints and distributed-lag models are numerically identical leading to the same parameter estimates after correct reparametrization. Third, classic dummy variable event study designs can be generalized to models that account for multiple events of different sign and intensity of the treatment, which are particularly interesting for research in labor economics and public finance. We show the practical relevance of our methodological points in a replication study.},
+	language = {en},
+	number = {3571164},
+	urldate = {2022-06-08},
+	institution = {Social Science Research Network},
+	author = {Schmidheiny, Kurt and Siegloch, Sebastian},
+	year = {2020},
+	doi = {10.2139/ssrn.3571164},
+	keywords = {applied microeconomics, credibility revolution, distributed-lag, event study},
+	file = {Full Text PDF:/Users/jonathanroth/Zotero/storage/MFHG2D2U/Schmidheiny and Siegloch - 2020 - On Event Studies and Distributed-Lags in Two-Way F.pdf:application/pdf;Snapshot:/Users/jonathanroth/Zotero/storage/2BABCUER/papers.html:text/html},
+}
+
+@misc{viviano_dynamic_2021,
+	title = {Dynamic covariate balancing: estimating treatment effects over time},
+	shorttitle = {Dynamic covariate balancing},
+	url = {http://arxiv.org/abs/2103.01280},
+	doi = {10.48550/arXiv.2103.01280},
+	abstract = {This paper discusses the problem of estimation and inference on the effects of time-varying treatment. We propose a method for inference on the effects treatment histories, introducing a dynamic covariate balancing method combined with penalized regression. Our approach allows for (i) treatments to be assigned based on arbitrary past information, with the propensity score being unknown; (ii) outcomes and time-varying covariates to depend on treatment trajectories; (iii) high-dimensional covariates; (iv) heterogeneity of treatment effects. We study the asymptotic properties of the estimator, and we derive the parametric convergence rate of the proposed procedure. Simulations and an empirical application illustrate the advantage of the method over state-of-the-art competitors.},
+	urldate = {2022-12-23},
+	publisher = {arXiv},
+	author = {Viviano, Davide and Bradic, Jelena},
+	month = jun,
+	year = {2021},
+	note = {arXiv:2103.01280 [econ, math, stat]},
+	keywords = {Economics - Econometrics, Mathematics - Statistics Theory, Statistics - Machine Learning, Statistics - Methodology},
+	file = {arXiv Fulltext PDF:/Users/jonathanroth/Zotero/storage/JI7BUFP3/Viviano and Bradic - 2021 - Dynamic covariate balancing estimating treatment .pdf:application/pdf;arXiv.org Snapshot:/Users/jonathanroth/Zotero/storage/Z9KVPFYY/2103.html:text/html},
+}
+
+@misc{caetano_difference_2022,
+	title = {Difference in {Differences} with {Time}-{Varying} {Covariates}},
+	url = {http://arxiv.org/abs/2202.02903},
+	doi = {10.48550/arXiv.2202.02903},
+	abstract = {This paper considers identification and estimation of causal effect parameters from participating in a binary treatment in a difference in differences (DID) setup when the parallel trends assumption holds after conditioning on observed covariates. Relative to existing work in the econometrics literature, we consider the case where the value of covariates can change over time and, potentially, where participating in the treatment can affect the covariates themselves. We propose new empirical strategies in both cases. We also consider two-way fixed effects (TWFE) regressions that include time-varying regressors, which is the most common way that DID identification strategies are implemented under conditional parallel trends. We show that, even in the case with only two time periods, these TWFE regressions are not generally robust to (i) time-varying covariates being affected by the treatment, (ii) treatment effects and/or paths of untreated potential outcomes depending on the level of time-varying covariates in addition to only the change in the covariates over time, (iii) treatment effects and/or paths of untreated potential outcomes depending on time-invariant covariates, (iv) treatment effect heterogeneity with respect to observed covariates, and (v) violations of strong functional form assumptions, both for outcomes over time and the propensity score, that are unlikely to be plausible in most DID applications. Thus, TWFE regressions can deliver misleading estimates of causal effect parameters in a number of empirically relevant cases. We propose both doubly robust estimands and regression adjustment/imputation strategies that are robust to these issues while not being substantially more challenging to implement.},
+	urldate = {2022-12-22},
+	publisher = {arXiv},
+	author = {Caetano, Carolina and Callaway, Brantly and Payne, Stroud and Rodrigues, Hugo Sant'Anna},
+	month = feb,
+	year = {2022},
+	note = {arXiv:2202.02903 [econ]},
+	keywords = {Economics - Econometrics},
+	annote = {Comment: 33 pages},
+}
+
+
+@article{bojinov_panel_2020,
+	title = {Panel experiments and dynamic causal effects: A finite population perspective},
+	author = {Bojinov, Iavor and Rambachan, Ashesh and Shephard, Neil},
+	year = {2021},
+    volume = {12},
+    number = {4},
+    pages = {1171--1196},
+    journal = {Quantitative Economics}
+}
+
 
 @article{mackinnon_wild_2018,
 	title = {The wild bootstrap for few (treated) clusters},
@@ -24,25 +146,19 @@
 	journal = {The Econometrics Journal},
 	author = {MacKinnon, James G. and Webb, Matthew D.},
 	year = {2018},
-	note = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/ectj.12107},
-	keywords = {Cluster-robust variance estimator, Clustered data, Difference-in-differences, Grouped data, Robust inference, Subclustering, Treatment model, Wild bootstrap, Wild cluster bootstrap},
 	pages = {114--135},
 	file = {Full Text PDF:/Users/jonathanroth/Zotero/storage/M7UDAH58/MacKinnon and Webb - 2018 - The wild bootstrap for few (treated) clusters.pdf:application/pdf},
 }
 
 
 @article{chernozhukov_exact_2021,
-	title = {An {Exact} and {Robust} {Conformal} {Inference} {Method} for {Counterfactual} and {Synthetic} {Controls}},
-	url = {http://arxiv.org/abs/1712.09089},
-	abstract = {We introduce new inference procedures for counterfactual and synthetic control methods for policy evaluation. We recast the causal inference problem as a counterfactual prediction and a structural breaks testing problem. This allows us to exploit insights from conformal prediction and structural breaks testing to develop permutation inference procedures that accommodate modern high-dimensional estimators, are valid under weak and easy-to-verify conditions, and are provably robust against misspecification. Our methods work in conjunction with many different approaches for predicting counterfactual mean outcomes in the absence of the policy intervention. Examples include synthetic controls, difference-in-differences, factor and matrix completion models, and (fused) time series panel data models. Our approach demonstrates an excellent small-sample performance in simulations and is taken to a data application where we re-evaluate the consequences of decriminalizing indoor prostitution. Open-source software for implementing our conformal inference methods is available.},
-	urldate = {2022-01-12},
-	journal = {arXiv:1712.09089 [econ, stat]},
+	title = {An Exact and Robust Conformal Inference Method for Counterfactual and Synthetic Controls},
+	journal = {Journal of the American Statistical Association},
 	author = {Chernozhukov, Victor and Wüthrich, Kaspar and Zhu, Yinchu},
-	month = may,
 	year = {2021},
-	note = {arXiv: 1712.09089},
-	keywords = {Economics - Econometrics, Statistics - Methodology},
-	file = {arXiv Fulltext PDF:/Users/jonathanroth/Zotero/storage/YQRVS5L3/Chernozhukov et al. - 2021 - An Exact and Robust Conformal Inference Method for.pdf:application/pdf;arXiv.org Snapshot:/Users/jonathanroth/Zotero/storage/PNMIBG2L/1712.html:text/html},
+	volume = {116},
+	number = {536},
+	pages = {1849--1864 }
 }
 
 
@@ -50,15 +166,11 @@
 @article{gruber_incidence_1994,
 	title = {The {Incidence} of {Mandated} {Maternity} {Benefits}},
 	volume = {84},
-	issn = {0002-8282},
-	url = {https://www.jstor.org/stable/2118071},
-	abstract = {I consider the labor-market effects of mandates which raise the costs of employing a demographically identifiable group. The efficiency of these policies will be largely dependent on the extent to which their costs are shifted to group-specific wages. I study several state and federal mandates which stipulated that childbirth be covered comprehensively in health insurance plans, raising the relative cost of insuring women of childbearing age. I find substantial shifting of the costs of these mandates to the wages of the targeted group. Correspondingly, I find little effect on total labor input for that group.},
 	number = {3},
 	urldate = {2022-01-12},
 	journal = {The American Economic Review},
 	author = {Gruber, Jonathan},
 	year = {1994},
-	note = {Publisher: American Economic Association},
 	pages = {622--641},
 	file = {JSTOR Full Text PDF:/Users/jonathanroth/Zotero/storage/AJTB4LXZ/Gruber - 1994 - The Incidence of Mandated Maternity Benefits.pdf:application/pdf},
 }
@@ -115,17 +227,13 @@
 }
 
 @article{baker_how_2021,
-	title = {How {Much} {Should} {We} {Trust} {Staggered} {Difference}-{In}-{Differences} {Estimates}?},
-	issn = {1556-5068},
-	url = {https://www.ssrn.com/abstract=3794018},
-	doi = {10.2139/ssrn.3794018},
-	abstract = {Diﬀerence-in-diﬀerences analysis with staggered treatment timing is frequently used to assess the impact of policy changes on corporate outcomes in academic research. However, recent advances in econometric theory show that such designs are likely to be biased in the presence of treatment eﬀect heterogeneity. Given the pronounced use of staggered treatment designs in applied corporate ﬁnance and accounting research, this ﬁnding potentially impacts a large swath of prior ﬁndings in these ﬁelds. We survey the nascent literature and document how and when such bias arises from treatment eﬀect heterogeneity. We apply recently proposed methods to a set of prior published results, and ﬁnd that correcting for the bias induced by the staggered nature of policy adoption frequently impacts the estimated eﬀect from standard diﬀerence-indiﬀerence studies. In many cases, the reported eﬀects in prior research become indistinguishable from zero.},
-	language = {en},
-	urldate = {2021-12-30},
-	journal = {SSRN Electronic Journal},
+	title = {How much should we trust staggered difference-in-differences estimates?},
+	journal = {Journal of Financial Economics},
 	author = {Baker, Andrew and Larcker, David F. and Wang, Charles C. Y.},
-	year = {2021},
-	file = {Baker et al. - 2021 - How Much Should We Trust Staggered Difference-In-D.pdf:/Users/jonathanroth/Zotero/storage/CFPXRWRN/Baker et al. - 2021 - How Much Should We Trust Staggered Difference-In-D.pdf:application/pdf},
+	year = {2022},
+	volume = {144},
+	number = {2},
+	pages = {370--395}
 }
 
 
@@ -411,16 +519,13 @@ year = {2020}
 }
 
 @article{shaikh_randomization_2021,
-	title = {Randomization {Tests} in {Observational} {Studies} with {Staggered} {Adoption} of {Treatment}},
-	url = {http://arxiv.org/abs/1912.10610},
-	abstract = {This paper considers the problem of inference in observational studies with time-varying adoption of treatment. In addition to an unconfoundedness assumption that the potential outcomes are independent of the times at which units adopt treatment conditional on the units' observed characteristics, our analysis assumes that the time at which each unit adopts treatment follows a Cox proportional hazards model. This assumption permits the time at which each unit adopts treatment to depend on the observed characteristics of the unit, but imposes the restriction that the probability of multiple units adopting treatment at the same time is zero. In this context, we study Fisher-style randomization tests of a null hypothesis that specifies that there is no treatment effect for all units and all time periods in a distributional sense. We first show that an infeasible test that treats the parameters of the Cox model as known has rejection probability no greater than the nominal level in finite samples. We then establish that the feasible test that replaces these parameters with consistent estimators has limiting rejection probability no greater than the nominal level. In a simulation study, we examine the practical relevance of our theoretical results, including robustness to misspecification of the model for the time at which each unit adopts treatment. Finally, we provide an empirical application of our methodology using the synthetic control-based test statistic and tobacco legislation data found in Abadie et. al. (2010).},
-	urldate = {2021-12-29},
-	journal = {arXiv:1912.10610 [stat]},
+	title = {Randomization Tests in Observational Studies With Staggered Adoption of Treatment},
+	journal = {Journal of the American Statistical Association},
 	author = {Shaikh, Azeem and Toulis, Panos},
 	year = {2021},
-	keywords = {Statistics - Applications, Statistics - Methodology},
-	annote = {Comment: 30 pages, 2 figures, 6 tables},
-	file = {arXiv Fulltext PDF:/Users/jonathanroth/Zotero/storage/9T4M5ZSL/Shaikh and Toulis - 2021 - Randomization Tests in Observational Studies with .pdf:application/pdf;arXiv.org Snapshot:/Users/jonathanroth/Zotero/storage/ZK8W5392/1912.html:text/html},
+	volume = {116},
+	number = {536},
+	pages = {1835--1848}
 }
 
 @article{mckenzie_beyond_2012,
@@ -592,6 +697,35 @@ year = {2019}
 }
 
 
+@article{mackinnon_cluster-robust_2022,
+	title = {Cluster-robust inference: A guide to empirical practice},
+	journal = {Journal of Econometrics},
+	author = {MacKinnon, James G. and Nielsen, Morten Ørregaard and Webb, Matthew D.},
+	year = {2022},
+	volume = {Forthcoming}
+}
+
+@article{AbadieEtAl(22),
+  author = {Abadie, Alberto and Athey, Susan and Imbens, Guido and Wooldridge, Jeffrey},
+  title = {When Should You Adjust Standard Errors for Clustering?},
+  year = {2023},
+  journal = {The Quarterly Journal of Economics},
+  volume = {138},
+  number = {1},
+  pages = {1--35}
+}
+
+
+@article{abadie_sampling-based_2020,
+	title = {Sampling-{Based} versus {Design}-{Based} {Uncertainty} in {Regression} {Analysis}},
+	volume = {88},
+	number = {1},
+	journal = {Econometrica},
+	author = {Abadie, Alberto and Athey, Susan and Imbens, Guido W. and Wooldridge, Jeffrey M.},
+	year = {2020},
+	pages = {265--296}
+}
+
 
 @article{roth_whats_2022,
 	title = {What's {Trending} in {Difference}-in-{Differences}? {A} {Synthesis} of the {Recent} {Econometrics} {Literature}},
@@ -609,16 +743,25 @@ year = {2019}
 }
 
 
+@article{roth_when_2023,
+	title = {When is parallel trends sensitive to functional form?},
+	volume = {91},
+	number = {2},
+	journal = {Econometrica},
+	author = {Roth, Jonathan and Sant'Anna, Pedro HC},
+	year = {2023},
+	note = {Publisher: Wiley Online Library},
+	pages = {737--747},
+}
+
+
+
 @article{roth_when_2021,
 	title = {When {Is} {Parallel} {Trends} {Sensitive} to {Functional} {Form}?},
-	url = {http://arxiv.org/abs/2010.04814},
-	abstract = {This paper assesses when the validity of difference-in-differences and related estimators depends on functional form. We provide a novel characterization: the parallel trends assumption holds under all strictly monotonic transformations of the outcome if and only if a stronger "parallel trends"-type condition holds for the cumulative distribution function of untreated potential outcomes. This condition is satisfied if and essentially only if the population can be partitioned into a subgroup for which treatment is effectively randomly assigned and a remaining subgroup for which the distribution of untreated potential outcomes is stable over time. We show further that it is impossible to construct any estimator that is consistent (or unbiased) for the average treatment effect on the treated (ATT) without either imposing functional form restrictions or imposing assumptions that identify the full distribution of untreated potential outcomes. Our results suggest that researchers who wish to point-identify the ATT should justify one of the following: (i) why treatment is as-if randomly assigned, (ii) why the chosen functional form is correct at the exclusion of others, or (iii) a method for inferring the entire counterfactual distribution of untreated potential outcomes.},
-	urldate = {2021-02-01},
-	journal = {arXiv:2010.04814 [econ, stat]},
+	journal = {Econometrica},
 	author = {Roth, Jonathan and Sant'Anna, Pedro H. C.},
-	year = {2021},
-	keywords = {Economics - Econometrics, Statistics - Methodology},
-	file = {arXiv.org Snapshot:/Users/jonathanroth/Zotero/storage/BHRPFINY/2010.html:text/html;arXiv Fulltext PDF:/Users/jonathanroth/Zotero/storage/59Y83WKG/Roth and Sant'Anna - 2021 - When Is Parallel Trends Sensitive to Functional Fo.pdf:application/pdf},
+	year = {2022},
+	volume = {Forthcoming}
 }
 
 @article{dette_difference--differences_2020,
@@ -641,22 +784,12 @@ year = {2019}
 }
 
 
-@techreport{de_chaisemartin_two-way-survey_2021,
-	address = {Rochester, NY},
-	type = {{SSRN} {Scholarly} {Paper}},
-	title = {Two-{Way} {Fixed} {Effects} and {Differences}-in-{Differences} with {Heterogeneous} {Treatment} {Effects}: {A} {Survey}},
-	shorttitle = {Two-{Way} {Fixed} {Effects} and {Differences}-in-{Differences} with {Heterogeneous} {Treatment} {Effects}},
-	url = {https://papers.ssrn.com/abstract=3980758},
-	abstract = {Linear regressions with period and group fixed effects are widely used to estimate policies' effects: 26 of the 100 most cited papers published by the American Economic Review from 2015 to 2019 estimate such regressions. It has recently been show that those regressions may produce misleading estimates, if the policy's effect is heterogeneous between groups or over time, as is often the case. This survey reviews a fast-growing literature that documents this issue, and that proposes alternative estimators robust to heterogeneous effects.},
-	language = {en},
-	number = {ID 3980758},
-	urldate = {2021-12-23},
-	institution = {Social Science Research Network},
+@article{de_chaisemartin_two-way-survey_2021,
+	title = {Two-way fixed effects and differences-in-differences with heterogeneous treatment effects: a survey},
+	journal = {Econometrics Journal},
+    volume = {Forthcoming},
 	author = {de Chaisemartin, Clément and D'Haultfœuille, Xavier},
-	year = {2021},
-	doi = {10.2139/ssrn.3980758},
-	keywords = {Clément de Chaisemartin, SSRN, Two-Way Fixed Effects and Differences-in-Differences with Heterogeneous Treatment Effects: A Survey, Xavier D'Haultfœuille},
-	file = {Full Text PDF:/Users/jonathanroth/Zotero/storage/MYHQVDI3/de Chaisemartin and D'Haultfœuille - 2021 - Two-Way Fixed Effects and Differences-in-Differenc.pdf:application/pdf},
+	year = {2022}
 }
 
 @article{callaway_difference--differences_2021,
@@ -726,9 +859,7 @@ year = {2019}
 
 
 @article{gardner_two-stage_2021,
-	title = {Two-stage diﬀerences in diﬀerences},
-	abstract = {A recent literature has shown that when adoption of a treatment is staggered and average treatment eﬀects vary across groups and over time, diﬀerence-in-diﬀerences regression does not identify an easily interpretable measure of the typical eﬀect of the treatment. In this paper, I extend this literature in two ways. First, I provide some simple underlying intuition for why diﬀerence-in-diﬀerences regression does not identify a group×period average treatment eﬀect. Second, I propose an alternative twostage estimation framework, motivated by this intuition. In this framework, group and period eﬀects are identiﬁed in a ﬁrst stage from the sample of untreated observations, and average treatment eﬀects are identiﬁed in a second stage by comparing treated and untreated outcomes, after removing these group and period eﬀects. The two-stage approach is robust to treatment-eﬀect heterogeneity under staggered adoption, and can be used to identify a host of diﬀerent average treatment eﬀect measures. It is also simple, intuitive, and easy to implement. I establish the theoretical properties of the two-stage approach and demonstrate its eﬀectiveness and applicability using Monte-Carlo evidence and an example from the literature.},
-	language = {en},
+	title = {Two-stage differences in differences},
 	journal = {Working Paper},
 	author = {Gardner, John},
 	file = {Gardner - Two-stage diﬀerences in diﬀerences.pdf:/Users/jonathanroth/Zotero/storage/NZWFZ8II/Gardner - Two-stage diﬀerences in diﬀerences.pdf:application/pdf},
@@ -954,17 +1085,13 @@ year = {2019}
 
 
 @article{Ben-Michael2021,
-abstract = {Staggered adoption of policies by different units at different times creates promising opportunities for observational causal inference. Estimation remains challenging, however, and common regression methods can give misleading results. A promising alternative is the synthetic control method (SCM), which finds a weighted average of control units that closely balances the treated unit's pre-treatment outcomes. In this paper, we generalize SCM, originally designed to study a single treated unit, to the staggered adoption setting. We first bound the error for the average effect and show that it depends on both the imbalance for each treated unit separately and the imbalance for the average of the treated units. We then propose "partially pooled" SCM weights to minimize a weighted combination of these measures; approaches that focus only on balancing one of the two components can lead to bias. We extend this approach to incorporate unit-level intercept shifts and auxiliary covariates. We assess the performance of the proposed method via extensive simulations and apply our results to the question of whether teacher collective bargaining leads to higher school spending, finding minimal impacts. We implement the proposed method in the augsynth R package.},
-archivePrefix = {arXiv},
-arxivId = {1912.03290},
 author = {Ben-Michael, Eli and Feller, Avi and Rothstein, Jesse},
-doi = {10.2139/ssrn.3861415},
-eprint = {1912.03290},
-file = {:C$\backslash$:/Users/psantanna/Downloads/1912.03290.pdf:pdf},
-journal = {Journal of the Royal Statistical Society Series B},
-title = {{Synthetic Controls with Staggered Adoption}},
-volume = {Forthcoming},
-year = {2021}
+journal = {Journal of the Royal Statistical Society: Series B},
+title = {{Synthetic controls with staggered adoption}},
+volume = {84},
+number = {2},
+year = {2022},
+pages = {351--381}
 }
 
 
@@ -1534,11 +1661,12 @@ year = {2021}
 }
 
 
-@techreport{andrews_inference_2019,
-	type = {Working {Paper}},
+@article{andrews_inference_2019,
 	title = {Inference for {Linear} {Conditional} {Moment} {Inequalities}},
-	author = {Andrews, Isaiah and Pakes, Ariel and Roth, Jonathan},
-	year = {2019}
+	author = {Andrews, Isaiah and Roth, Jonathan and Pakes, Ariel},
+	year = {2022},
+	journal = {Review of Economic Studies},
+	volume = {Forthcoming}
 }
 
 @book{vaart_weak_1996,
@@ -2464,6 +2592,15 @@ year = {2003}
 	file = {Snapshot:/Users/jonathanroth/Zotero/storage/4BQGI26J/jae.html:text/html;Submitted Version:/Users/jonathanroth/Zotero/storage/QF6SLM6Q/González - 2005 - Nonparametric bounds on the returns to language sk.pdf:application/pdf}
 }
 
+@book{AngristPischke(09), 
+    author="Joshua D. Angrist and Jorn-Steffen Pischke",
+    title="Mostly Harmless Econometrics: An Empiricist's Companion",
+    publisher="Princeton University Press",
+    year=2009,
+    address="Princeton"
+}
+
+
 @article{gafarov_inference_2019,
 	title = {Inference in high-dimensional set-identified affine models},
 	url = {https://arxiv.org/abs/1904.00111v1},
@@ -2908,19 +3045,12 @@ title = {A {Penalized} {Synthetic} {Control} {Estimator} for {Disaggregated} {Da
 	file = {Hartman and Hidalgo - An Equivalence Approach to Balance and Placebo Tes.pdf:/Users/abilinski/Zotero/storage/W9TSHA8H/Hartman and Hidalgo - An Equivalence Approach to Balance and Placebo Tes.pdf:application/pdf}
 }
 
-@techreport{liu_practical_2021,
-	address = {Rochester, NY},
-	type = {{SSRN} {Scholarly} {Paper}},
-	title = {A {Practical} {Guide} to {Counterfactual} {Estimators} for {Causal} {Inference} with {Time}-{Series} {Cross}-{Sectional} {Data}},
-	url = {https://papers.ssrn.com/abstract=3555463},
-	abstract = {This paper introduces a unified framework of counterfactual estimation for causal inference with time-series cross-sectional data, in which we estimate the average treatment effect on the treated by directly imputing counterfactual outcomes for treated observations. We discuss several novel estimators under this framework, including the fixed effects counterfactual estimator, interactive fixed effects counterfactual estimator, and matrix completion estimator. They provide more reliable causal estimates than conventional twoway fixed effects models when treatment effects are heterogeneous or unobserved time-varying confounders exist. Moreover, we propose a new dynamic treatment effects plot, along with several diagnostic tests, to help researchers gauge the validity of the identifying assumptions. We illustrate these methods  with two political economy examples and develop an open-source package, fect, in both R and Stata to facilitate implementation.},
-	language = {en},
-	number = {ID 3555463},
-	urldate = {2021-10-11},
-	institution = {Social Science Research Network},
+@article{liu_practical_2021,
+	title = {A Practical Guide to Counterfactual Estimators for Causal Inference with Time-Series Cross-Sectional Data},
+	volume = {Forthcoming},
+    journal = {American Journal of Political Science},
 	author = {Liu, Licheng and Wang, Ye and Xu, Yiqing},
-	year = {2021},
-	doi = {10.2139/ssrn.3555463}
+	year = {2022}
 }
 
 
@@ -2962,18 +3092,12 @@ title = {A {Penalized} {Synthetic} {Control} {Estimator} for {Disaggregated} {Da
 }
 
 
-@techreport{freyaldenhoven_visualization_2021,
-	type = {Working {Paper}},
-	title = {Visualization, {Identification}, and {Estimation} in the {Linear} {Panel} {Event}-{Study} {Design}},
-	url = {https://www.nber.org/papers/w29170},
-	abstract = {Linear panel models, and the “event-study plots” that often accompany them, are popular tools for learning about policy effects. We discuss the construction of event-study plots and suggest ways to make them more informative. We examine the economic content of different possible identifying assumptions. We explore the performance of the corresponding estimators in simulations, highlighting that a given estimator can perform well or poorly depending on the economic environment. An accompanying Stata package, xtevent, facilitates adoption of our suggestions.},
-	number = {29170},
-	urldate = {2021-12-27},
-	institution = {National Bureau of Economic Research},
-	author = {Freyaldenhoven, Simon and Hansen, Christian and Pérez Pérez, Jorge and Shapiro, Jesse M.},
+@article{freyaldenhoven_visualization_2021,
+	title = {Visualization, identification, and estimation in the linear panel event-study design.},
+	journal = {Advances in Economics and Econometrics: Twelfth World Congress},
 	year = {2021},
-	doi = {10.3386/w29170},
-	file = {Full Text PDF:/Users/jonathanroth/Zotero/storage/JP6PZMQ6/Freyaldenhoven et al. - 2021 - Visualization, Identification, and Estimation in t.pdf:application/pdf},
+	volume = {Forthcoming},
+	author = {Simon Freyaldenhoven and Christian Hansen and Jorge P{\'e}rez P{\'e}rez and Jesse M. Shapiro}
 }
 
 
@@ -2984,6 +3108,7 @@ title = {A {Penalized} {Synthetic} {Control} {Estimator} for {Disaggregated} {Da
 	journal = {Review of Economic Studies},
 	volume = {Forthcoming}
 }
+
 
 @article{heckman_characterizing_1998,
 	title = {Characterizing {Selection} {Bias} {Using} {Experimental} {Data}},
@@ -3028,7 +3153,7 @@ title = {A {Penalized} {Synthetic} {Control} {Estimator} for {Disaggregated} {Da
 	number = {1},
 	urldate = {2021-12-23},
 	journal = {Journal of Econometrics},
-	author = {Sant’Anna, Pedro H. C. and Zhao, Jun},
+	author = {Sant'Anna, Pedro H. C. and Zhao, Jun},
 	year = {2020},
 	keywords = {Causal inference, Difference-in-differences, Natural experiments, Panel data, Repeated cross-section data, Semiparametric efficiency},
 	pages = {101--122},
