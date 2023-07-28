@@ -47,7 +47,7 @@ For simplicity, consider the canonical two-period DiD model:
 	Potential outcomes: observed outcome is $Y_{it} = D_i Y_{it}(1) + (1-D_i) Y_{it}(0)$
 	
 	\item
-	Assume ``no anticipation'': $Y_{it}(0) = Y_{it}(1)$
+	Assume ``no anticipation'': $Y_{i0}(0) = Y_{i0}(1)$
 \end{wideitemize}
 \end{frame}
 
@@ -574,6 +574,22 @@ Absent these conditions, PT will be violated for at least some functional form; 
 \end{frame}
 
 
+\begin{frame}{Robust confidence intervals}
+	\begin{wideitemize}
+		\item
+		In the paper, we develop confidence intervals for the treatment effect of interest under the assumptions on $\delta$ discussed above
+		
+		\item
+		The CIs account for the fact that we don't observe the true (population) pre-trend $\deltapre$, only our estimate $\betahatpre$. 
+		
+		\item
+		The robust CIs tend to be wider the larger are the confidence intervals on the pre-trends --- intuitive, since if we know less about the pre-trends, we should have more uncertainty
+		
+		\item
+		This contrasts with pre-trends tests, where you're less likely to reject the null that $\betapre =0$ when the SEs are larger!
+	\end{wideitemize}
+\end{frame}
+
 
 \begin{frame}{Benzarti \& Carloni (2019)}
 	\begin{wideitemize}
@@ -600,21 +616,6 @@ Absent these conditions, PT will be violated for at least some functional form; 
 	\end{wideitemize}
 \end{frame}
 
-\begin{frame}{Robust confidence intervals}
-	\begin{wideitemize}
-		\item
-		In the paper, we develop confidence intervals for the treatment effect of interest under the assumptions on $\delta$ discussed above
-		
-		\item
-		The CIs account for the fact that we don't observe the true (population) pre-trend $\deltapre$, only our estimate $\betahatpre$. 
-		
-		\item
-		The robust CIs tend to be wider the larger are the confidence intervals on the pre-trends --- intuitive, since if we know less about the pre-trends, we should have more uncertainty
-		
-		\item
-		This contrasts with pre-trends tests, where you're less likely to reject the null that $\betapre =0$ when the SEs are larger!
-	\end{wideitemize}
-\end{frame}
 
 \begin{frame}{Event-study coefficients for log profits}
 	\centering
